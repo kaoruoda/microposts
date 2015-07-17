@@ -2,3 +2,28 @@
     <%= gravatar_for @user %>
     <%= @user.name %>
 </h1>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        Profile
+    </div>
+    <div class="panel-body">
+        <%= @user.profile %>
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        Country
+    </div>
+    <div class="panel-body">
+        <%= @user.country %>
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">
+        City
+    </div>
+    <div class="panel-body">
+        <%= @user.city %>
+    </div>
+</div>
+
