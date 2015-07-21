@@ -5,20 +5,6 @@ class UsersController < ApplicationController
     @microposts = @user.microposts
   end
   
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    @user = User.find(params[:id])
-    if @user.update(user_edit_params)
-      flash[:success] = 'Profile Edited'
-      redirect_to @user
-    else
-      render 'edit'
-    end  
-  end
-  
   def new
     @user = User.new
   end
@@ -37,9 +23,5 @@ class UsersController < ApplicationController
   
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-  end
-  
-  def user_edit_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :profile, :country, :city)
   end
 end
